@@ -1,0 +1,4 @@
+﻿This product includes software developed by slugdev.
+
+https://github.com/slugdev/stltostp
+https://github.com/slugdev/stltostp?tab=BSD-4-Clause-1-ov-file

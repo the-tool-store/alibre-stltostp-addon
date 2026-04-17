@@ -1,0 +1,10 @@
+﻿<AlibreDesignAddOn specificationVersion="2" friendlyName="alibre-stltostp">
+<Author name="Stephen S. Mitchell" link="https://github.com/stephensmitchell/alibre-stltostp-addon"/>
+   <Copyright>Copyright (c) 2025 Stephen S. Mitchell</Copyright>
+   <DLL type="Managed" loadedWhen="Startup" location="alibre-stltostp-addon.dll"/>
+   <Icon location="Icons\logo.ico"/> 
+   <Menu text="stltostp"/>
+   <Description>stltostp </Description> 
+   <Workspace type="Always"/>
+   <Property name="Identifier" value="alibre-stltostp-addon"/>
+</AlibreDesignAddOn>

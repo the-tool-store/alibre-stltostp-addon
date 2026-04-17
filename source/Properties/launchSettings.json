@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "alibre-stltostp-addon": {
+      "commandName": "Project"
+    },
+    "Profile 1": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Alibre Design 28.1.1.28227\\Program\\Alibre Design.exe"
+    }
+  }
+}
