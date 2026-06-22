@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
 using IStream = System.Runtime.InteropServices.ComTypes.IStream;
@@ -121,8 +122,9 @@ namespace AlibreAddOnAssembly
                     MessageBox.Show("Failed to start the external conversion process.", "Process Start Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     return null;
                 }
+                Task<string> stdErrorTask = proc.StandardError.ReadToEndAsync();
                 string stdOutput = proc.StandardOutput.ReadToEnd();
-                string stdError = proc.StandardError.ReadToEnd();
+                string stdError = stdErrorTask.Result;
                 proc.WaitForExit();
                 if (proc.ExitCode == 0 && File.Exists(stepPath))
                 {

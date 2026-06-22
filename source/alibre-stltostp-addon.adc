@@ -6,5 +6,5 @@
    <Menu text="stltostp"/>
    <Description>stltostp </Description> 
    <Workspace type="Always"/>
-   <Property name="Identifier" value="alibre-stltostp-addon"/>
+   <Property name="Identifier" value="{B4106059-92F8-41E1-8CF9-F56130C30068}"/>
 </AlibreDesignAddOn>

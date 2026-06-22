@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -41,11 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="AlibreAddOn">
-      <HintPath>C:\Program Files\Alibre Design 28.1.0.28223\Program\AlibreAddOn.dll</HintPath>
+      <HintPath>C:\Program Files\Alibre Design 29.0.0.29060\Program\AlibreAddOn.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="AlibreX">
-      <HintPath>C:\Program Files\Alibre Design 28.1.0.28223\Program\AlibreX.dll</HintPath>
+      <HintPath>C:\Program Files\Alibre Design 29.0.0.29060\Program\AlibreX.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
