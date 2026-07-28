@@ -1,20 +1,15 @@
-## Description
-Brief description of what this PR changes.
+## What this changes
 
-## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Breaking change
-- [ ] Documentation update
-- [ ] Repository layout or maintenance update
+<!-- One or two sentences describing the change. -->
 
-## Testing
-- [ ] I tested these changes locally
-- [ ] I updated any affected documentation
-- [ ] I validated any path-sensitive project or build changes
+## Why
+
+<!-- The problem this solves. Link the issue it closes. -->
 
 ## Checklist
-- [ ] My changes follow the existing project style
-- [ ] I performed a self-review
-- [ ] I added comments where the code needs extra context
-- [ ] I updated docs for any user-facing or repo-layout change
+
+- [ ] The affected solution builds.
+- [ ] Source files carry no explanatory comments, and XML docs and docstrings survive.
+- [ ] Spacing is tight, with at most one blank line and no trailing whitespace.
+- [ ] I left out build output, installers, and scratch files.
+- [ ] The README still describes what the project does.

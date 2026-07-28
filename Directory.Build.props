@@ -1,0 +1,45 @@
+<Project>
+
+  <PropertyGroup>
+    <AlibreSearchRoot Condition="'$(AlibreSearchRoot)' == ''">$(ProgramW6432)</AlibreSearchRoot>
+    <AlibreSearchRoot Condition="'$(AlibreSearchRoot)' == ''">C:\Program Files</AlibreSearchRoot>
+    <AlibreProgramDir Condition="'$(AlibreProgramDir)' == '' and '$(ALIBRE_PROGRAM_DIR)' != ''">$(ALIBRE_PROGRAM_DIR)</AlibreProgramDir>
+  </PropertyGroup>
+
+  <Target Name="ResolveAlibreInstall"
+          Condition="'$(_AlibreResolved)' != 'true'"
+          BeforeTargets="ResolveAssemblyReferences;ClCompile;ResolveReferences;PrepareForBuild">
+
+    <ItemGroup Condition="'$(AlibreProgramDir)' == ''">
+      <_AlibreXProbe Include="$(AlibreSearchRoot)\Alibre Design *\Program\AlibreX.dll"
+                     Exclude="$(AlibreSearchRoot)\Alibre Design *BETA*\Program\AlibreX.dll" />
+    </ItemGroup>
+
+    <PropertyGroup Condition="'$(AlibreProgramDir)' == ''">
+      <_AlibreProbeList>@(_AlibreXProbe->'%(FullPath)', '|')</_AlibreProbeList>
+      <_AlibreProbeSep>$(_AlibreProbeList.LastIndexOf('|'))</_AlibreProbeSep>
+      <_AlibreNewestDll Condition="'$(_AlibreProbeList)' != '' and '$(_AlibreProbeSep)' == '-1'">$(_AlibreProbeList)</_AlibreNewestDll>
+      <_AlibreNewestDll Condition="'$(_AlibreProbeList)' != '' and '$(_AlibreProbeSep)' != '-1'">$(_AlibreProbeList.Substring($([MSBuild]::Add($(_AlibreProbeSep), 1))))</_AlibreNewestDll>
+      <AlibreProgramDir Condition="'$(_AlibreNewestDll)' != ''">$([System.IO.Path]::GetDirectoryName($(_AlibreNewestDll)))</AlibreProgramDir>
+    </PropertyGroup>
+
+    <PropertyGroup>
+      <_AlibreResolved>true</_AlibreResolved>
+      <AlibreScriptDir Condition="'$(AlibreProgramDir)' != '' and '$(AlibreScriptDir)' == ''">$(AlibreProgramDir)\Addons\AlibreScript</AlibreScriptDir>
+      <AssemblySearchPaths Condition="'$(AlibreProgramDir)' != ''">$(AlibreProgramDir);$(AlibreScriptDir);$(AssemblySearchPaths)</AssemblySearchPaths>
+    </PropertyGroup>
+
+    <Warning Condition="'$(AlibreProgramDir)' == ''"
+             Text="No Alibre Design installation found under '$(AlibreSearchRoot)'. Set the ALIBRE_PROGRAM_DIR environment variable to the Program folder of your install." />
+    <Message Condition="'$(AlibreProgramDir)' != ''" Importance="low" Text="Alibre Design resolved to $(AlibreProgramDir)" />
+  </Target>
+
+  <Target Name="AddAlibreIncludeDirs" AfterTargets="ResolveAlibreInstall" Condition="'$(AlibreProgramDir)' != '' and '$(MSBuildProjectExtension)' == '.vcxproj'">
+    <ItemGroup>
+      <ClCompile>
+        <AdditionalIncludeDirectories>$(AlibreProgramDir);%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      </ClCompile>
+    </ItemGroup>
+  </Target>
+
+</Project>
