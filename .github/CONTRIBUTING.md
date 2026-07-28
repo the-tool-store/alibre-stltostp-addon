@@ -1,39 +1,19 @@
-# Contributing to Alibre Stltostp Addon
+# Contributing
 
-Thank you for your interest in contributing to this project. Contributions are welcome.
-
-## How to Contribute
-
-### Reporting Issues
-
-- Check whether the issue has already been reported.
-- Provide a clear description of the problem.
-- Include steps to reproduce the issue.
-- Add relevant error messages or screenshots.
-- Specify your Alibre Design version and operating system where applicable.
-
-### Submitting Pull Requests
-
-1. Fork the repository.
-2. Create a branch for your feature or fix.
-3. Make your changes.
-4. Test your changes before submitting.
-5. Commit with clear, descriptive messages.
-6. Push to your fork.
-7. Submit a pull request with a complete description.
-
-### Code Style
-
-- Follow the existing code style and conventions.
-- Keep code clean and well documented.
-- Update documentation when behavior or layout changes.
-
-### Development Setup
-
-1. Clone the repository.
-2. Restore any dependencies or submodules required by the repo.
-3. Follow the guidance in .github/README.md.
-
-## Questions
-
-Open an issue if you need clarification before contributing.
+- Contributions are welcome, and this page covers what to expect.
+  - Before you start
+    - Open an issue describing the change, so you do not duplicate work someone else has started.
+    - Say which Alibre Design version you are working against, because the API moves between releases.
+  - Making a change
+    - Work on a branch rather than the default branch.
+    - Keep source files free of explanatory comments, because that prose belongs in your local developer notes.
+    - Keep XML documentation comments and Python docstrings, because tooling reads them.
+    - Keep spacing tight, meaning at most one blank line and no trailing whitespace.
+    - Put code in `source/`, reference material in `documentation/`, and nothing loose in the repository root.
+    - Leave build output, installers, and scratch files out of your commit.
+  - Before you open a pull request
+    - Build the affected solution and confirm it still succeeds.
+    - Check that the README still describes what the project now does.
+  - Opening a pull request
+    - Describe what changed and why, and link the issue it closes.
+    - Expect review comments, because a maintainer reads each change before it merges.

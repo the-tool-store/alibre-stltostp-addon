@@ -1,32 +1,29 @@
 ---
 name: Bug report
-about: Create a report to help us improve
-title: ''
+about: Report something that does not work
 labels: bug
-assignees: ''
-
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## What happened
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '...'
-3. Run '...'
-4. See error
+<!-- What you saw. -->
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+## What you expected
 
-**Screenshots**
-If applicable, add screenshots to help explain the problem.
+<!-- What you expected instead. -->
 
-**Environment**
-- OS: [e.g. Windows 11]
-- Alibre Design Version: [e.g. 2025]
-- Repo or Add-on Version: [e.g. main / 1.0.0]
+## Steps to reproduce
 
-**Additional context**
-Add any other context about the problem here.
+1.
+2.
+3.
+
+## Your setup
+
+- Alibre Design version:
+- Windows version:
+- Project version or commit:
+
+## Anything else
+
+<!-- Error messages, screenshots, or a sample file. -->

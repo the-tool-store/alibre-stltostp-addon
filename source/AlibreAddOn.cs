@@ -83,7 +83,7 @@ namespace AlibreAddOnAssembly
             Id = id;
             Text = text;
             ToolTip = toolTip;
-            Icon = null; // Icon functionality is disabled
+            Icon = null;
         }
         public void AddSubItem(MenuItem subItem) => SubItems.Add(subItem);
         public IAlibreAddOnCommand? RunCmd(IADSession session)
