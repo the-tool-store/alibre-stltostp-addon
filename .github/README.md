@@ -19,7 +19,6 @@
   - Where things live
     - `source/` holds the C# add-on, the manifest, and the bundled converter.
     - `documentation/` holds reference notes.
-    - `reviews/` holds dated code reviews.
   - Good to know
     - The slugdev project wrote the bundled `stltostp.exe` converter, which carries its own BSD licence.
     - Conversion quality depends on that converter, so a very large or damaged mesh can fail.
